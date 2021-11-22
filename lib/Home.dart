@@ -1,3 +1,7 @@
+import 'package:atm/TelaCliente.dart';
+import 'package:atm/TelaContato.dart';
+import 'package:atm/TelaEmpresa.dart';
+import 'package:atm/TelaServico.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
@@ -6,7 +10,38 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  void _abrirEmpresa() {}
+  //Navigation to Empresa Screen
+  void _abrirEmpresa() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => TelaEmpresa()),
+    );
+  }
+
+//Navigation to Servico Screen
+  void _abrirServico() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => TelaServico()),
+    );
+  }
+
+  //Navigation to Cliente Screen
+  void _abrirCliente() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => TelaCliente()),
+    );
+  }
+
+//Navigation do Contato Screen
+  void _abrirContato() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => TelaContato()),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,7 +67,7 @@ class _HomeState extends State<Home> {
                     child: (Image.asset("images/menu_empresa.png")),
                   ),
                   GestureDetector(
-                    onTap: _abrirEmpresa,
+                    onTap: _abrirServico,
                     child: (Image.asset("images/menu_servico.png")),
                   ),
                 ],
@@ -44,11 +79,11 @@ class _HomeState extends State<Home> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   GestureDetector(
-                    onTap: _abrirEmpresa,
+                    onTap: _abrirCliente,
                     child: (Image.asset("images/menu_cliente.png")),
                   ),
                   GestureDetector(
-                    onTap: _abrirEmpresa,
+                    onTap: _abrirContato,
                     child: (Image.asset("images/menu_contato.png")),
                   ),
                 ],
